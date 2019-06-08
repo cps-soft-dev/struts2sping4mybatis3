@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Archetype Created Web Application</display-name>
+	<!-- spring配置文件位置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring.xml,classpath:spring-mybatis.xml</param-value>
+	</context-param>
+	<!-- add struts2 configiguration -->
+	<filter>
+		<description>struts2</description>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- end add struts2 configuration -->
+	<!-- spring监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+</web-app>

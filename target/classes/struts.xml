@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+   <constant name="struts.convention.result.path" value="/jsps" />
+   <!-- struts全部*.actionのリクエストがstruts2で処理する -->
+   <constant name="struts.action.extension" value="action" />
+   <!-- struts開発モデル -->
+   <constant name="struts.devMode" value="true" />
+   <!-- strutsのxmlファイルが修正されたら，再ロード -->
+   <constant name="struts.configuration.xml.reload" value="true" />
+   <!-- strutsブラウザーに一時保存しない -->
+   <constant name="struts.serve.static.browserCache" value="false" />
+   <!-- strutsリクエストパラメタのエンコード -->
+   <constant name="struts.i18n.encoding" value="utf-8" />
+   <!-- struts毎回HTTPリクエストする時に、プロパティーファイルをリロードする。開発便利のために。 -->
+   <constant name="struts.i18n.reload" value="true" />
+   <!-- strutsアップロードファイルのサイズ上限 -->
+   <constant name="struts.multipart.maxSize" value="104857600" />
+   <!-- struts動態コール -->
+   <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+   <!-- Actionの名前が斜線を利用しない。 -->
+   <constant name="struts.enable.SlashesInActionNames" value="false" />
+   <!-- strutsタグ中に公式を利用することを許す。 -->
+   <constant name="struts.tag.altSyntax" value="true" />
+   <!-- strutsサーバがWebLogic,Orion,OC4Jの場合、trueに設定する。 -->
+   <constant name="struts.dispatcher.parametersWorkaround" value="false" />
+   <constant name="struts.objectFactory" value="spring" />
+   
+   <!-- <package name="basePackage" extends="struts-default"> -->
+   <package name="basePackage" namespace="/" extends="convention-default" strict-method-invocation="false">
+     <global-allowed-methods>regex:.*</global-allowed-methods>
+   </package>
+
+</struts>

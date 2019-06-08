@@ -1,0 +1,12 @@
+CREATE SCHEMA `cps_managerdb` DEFAULT CHARACTER SET utf8 ;
+
+CREATE TABLE `cps_managerdb`.`user_table` (
+  `userid` VARCHAR(12) NOT NULL,
+  `username` VARCHAR(45) NULL,
+  `userpwd` VARCHAR(45) NULL,
+  `createdate` DATE NULL,
+  `passwordsetdate` DATE NULL,
+  `BeforeLoginTime` TIMESTAMP NULL,
+  PRIMARY KEY (`userid`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;

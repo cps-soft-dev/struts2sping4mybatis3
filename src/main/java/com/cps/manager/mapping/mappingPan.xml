@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cps.manager.dao.TResmUserPanMapper">
+	<insert id="insertUser">
+		insert into user_table
+		(userid,username,userpwd,createdate,passwordsetdate,BeforeLoginTime)
+		values
+		(#{userID},#{userName},#{userPWD},#{createDate},#{passwordSetDate},#{beforeLoginTime})
+	</insert>
+	
+	<update id="updateUser">
+		UPDATE `cps_managerdb`.`user_table`
+		SET username = #{userName}
+			,BeforeLoginTime = #{beforeLoginTime}
+		WHERE (userid = #{userID});
+	</update>
+	
+	<delete id="deleteUser">	
+		DELETE FROM cps_managerdb.user_table
+		WHERE (userid = #{userID} AND userpwd = #{userPWD});
+	</delete>
+
+</mapper>
