@@ -26,8 +26,8 @@ git config --global i18n.logoutputencoding utf-8
 #打开 Git Bash，输入如下命令
 ssh-keygen -t rsa -C "email@..."
 #重命名ssh-key
-cp ~/.ssh/id_rsa.pub ~/.ssh/email@....pub
-#把~/.ssh/email@....pub这个文件发给我
+copy ~/.ssh/id_rsa.pub ~/.ssh/email@....pub
+#把email@....pub这个文件发给我(微信或者邮件：li_shuanglin@cps-soft.co.jp)
 4.项目克隆
 使用下面命令或者用gui界面
 git clone  git@github.com:cps-soft-dev/struts2sping4mybatis3.git  目录名
